@@ -37,7 +37,7 @@ export default function HomePage() {
     termsAccepted: false
   });
 
-  const REACT_APP_API_HOST = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:8080';
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:8080';
 
   // Fetch products
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function HomePage() {
     setIsLoading(true);
     setError('');
     try {
-      const response = await fetch(`${REACT_APP_API_HOST}/product/all`);
+      const response = await fetch(`${API_BASE_URL}/product/all`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -209,7 +209,7 @@ export default function HomePage() {
       console.log('Cart items string:', cartItemsString);
 
       // Send order to backend API
-      const response = await fetch(`${REACT_APP_API_HOST}/order/create`, {
+      const response = await fetch(`${API_BASE_URL}/order/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
