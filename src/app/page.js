@@ -37,6 +37,7 @@ export default function HomePage() {
     termsAccepted: false
   });
 
+
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:8080';
 
   // Fetch products
