@@ -23,7 +23,7 @@ export default function HomePage() {
   const [showOrderForm, setShowOrderForm] = useState(false);
   const [cartNotification, setCartNotification] = useState(null);
   const [orderSuccess, setOrderSuccess] = useState(null);
-  // Order form state
+  // Order form statee
   const [orderForm, setOrderForm] = useState({
     firstName: '',
     lastName: '',
